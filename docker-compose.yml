@@ -1,0 +1,13 @@
+services:
+  euro-office:
+    image: ghcr.io/euro-office/documentserver:latest
+    container_name: euro-office
+    stdin_open: true
+    tty: true
+    ports:
+      - "8100:80"
+    restart: unless-stopped
+    environment:
+      - THEME=euro-office
+      - EXAMPLE_ENABLED=true
+      - JWT_SECRET=
